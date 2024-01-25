@@ -297,9 +297,8 @@ void HiInclusiveJetSubstructure::analyze(const Event& iEvent, const EventSetup& 
 
   jets_.nref = 0;
 
-  //Ho appena decommentato questi due print
-  if(doChargedConstOnly_) std::cout << "Doing only charged jet constituents!" << std::endl;
-  else std::cout << "Doing ALL jet constituents!" << std::endl;
+  //if(doChargedConstOnly_) std::cout << "Doing only charged jet constituents!" << std::endl;
+  //else std::cout << "Doing ALL jet constituents!" << std::endl;
   
   jets_.triggerJetInAcceptance = false;
   
@@ -433,9 +432,6 @@ void HiInclusiveJetSubstructure::IterativeDeclusteringRec(double groom_type, dou
   double dyn_kt = std::numeric_limits<double>::min();
   Int_t dyn_split = 0;
   double z = 0;
-	//double zg =0;
-	//double ktg=0;
-	//double rg =0;
   double zg_SD = 0;
   double zg_latekt = 0;
   double ktg_SD = 0;
@@ -443,9 +439,7 @@ void HiInclusiveJetSubstructure::IterativeDeclusteringRec(double groom_type, dou
   double rg_SD = 0;
   double rg_latekt = 0;
   double dyn_deltaR = 0;
-  double flagtag;// io
-  double flagprompt = 0; //io, per seguire il D
-  double flagprod = 0; //io, per seguire il D
+  int flagtag;// io, per seguire il D
   // double dyn_var = std::numeric_limits<double>::min();
   double dyn_z = 0;
   double jet_radius_ca = 1.0;
@@ -501,9 +495,10 @@ void HiInclusiveJetSubstructure::IterativeDeclusteringRec(double groom_type, dou
       throw(124);
     }
       int sdFlag=0;
-      //if(groom_type == 1) flagtag = 0;// io
+      
       while(jj.has_parents(j1,j2)){
       if(j1.perp() < j2.perp()) std::swap(j1,j2);
+      vector < fastjet::PseudoJet > constitj1 = sorted_by_pt(j1.constituents());
       double delta_R = j1.delta_R(j2);
       //if(doHardestSplitMatching_ && isMC_) jets_.jtJetConstituent.push_back(j2);
       double k_t = j2.perp()*delta_R;
@@ -512,24 +507,18 @@ void HiInclusiveJetSubstructure::IterativeDeclusteringRec(double groom_type, dou
       // double dyn = 1./output_jets[0].perp()*z*(1-z)*jj.perp()*pow(delta_R/rParam,mydynktcut);
       // std::cout << "Reco split " << nsplit << " with k_T=" << k_t << " z=" << z << " eta " << j2.eta() << " phi " << j2.phi() <<  std::endl;
       
-	    if(( (groom_combine == 0) && (groom_type == 1) && (z > mysdcut1) && (sdFlag == 0) ) || (groom_combine == 1) && (z > mysdcut1) && (sdFlag == 0))
+      for(size_t j=0;j<constitj1.size();j++) if(constitj1[j].m() > 1) flagtag=1;
+
+	    if(( (groom_combine == 0) && (groom_type == 1) && (z > mysdcut1) && (sdFlag == 0) && (flagtag == 1) ) || (groom_combine == 1) && (z > mysdcut1) && (sdFlag == 0) && (flagtag == 1))
       { //Qui e' la condizione che deve soddisfare per essere inclusa con l algo softdrop. Nota che qui si entra solo se la flag del SoftDrop =0. poi viene aggiornata a =1 all'interno di questa scope, cosi prendo solamente il primo angolo che soddisfa la condizione di SD.
         sdFlag=1;
-        //zg = z;
-        //rg  = delta_R;
-        //ktg=k_t;
         zg_SD = z;
         rg_SD  = delta_R;
         ktg_SD = k_t;
-        //flagl=flagtag;
-        //flagprod=flagprompt; // io, per seguire il D
       }
 
-      if(( (groom_combine == 0) && (groom_type == 0) && (k_t > 1) ) || (groom_combine == 1) && (k_t > 1))
+      if(( (groom_combine == 0) && (groom_type == 0) && (k_t > 1) && (flagtag == 1) ) || ( (groom_combine == 1) && (k_t > 1) && (flagtag == 1) ) )
       {	//late kt    
-        //zg=z;
-        //rg=delta_R;
-        //ktg = k_t;
         zg_latekt = z;
         rg_latekt  = delta_R;
         ktg_latekt = k_t;
@@ -537,8 +526,6 @@ void HiInclusiveJetSubstructure::IterativeDeclusteringRec(double groom_type, dou
         j2first =j2;
         *sub1 = j1first;
         *sub2 = j2first;
-        //nsdin=nsplit;
-        //flagprod=flagprompt;// io, per seguire il D
       }
       jj = j1;
       nsplit = nsplit+1;
@@ -589,9 +576,7 @@ void HiInclusiveJetSubstructure::IterativeDeclusteringGen(double groom_type, dou
   double rg_latekt = 0;
   double dyn_z = 0;
   double jet_radius_ca = 1.0;
-  double flagtag; // io
-  double flagprompt = 0; // io, per seguire il D
-  double flagprod = 0; //io, per seguire il D
+  int flagtag = 0;// io, per seguire il D
 
   fastjet::JetDefinition jet_def(fastjet::genkt_algorithm,jet_radius_ca,0,static_cast<fastjet::RecombinationScheme>(0), fastjet::Best);
     // Reclustering jet constituents with new algorithm
@@ -634,11 +619,10 @@ void HiInclusiveJetSubstructure::IterativeDeclusteringGen(double groom_type, dou
       throw(124);
     }
       int sdFlag=0;
-      //if(groom_type == 0) flagtag = 1;// io
-      //if(groom_type == 1) flagtag = 0;// io
-
+      
       while(jj.has_parents(j1,j2)){
-      if(j1.perp() < j2.perp()) std::swap(j1,j2);
+      if(j1.perp() < j2.perp()) std::swap(j1,j2); //j1 hardest prong
+      vector < fastjet::PseudoJet > constitj1 = sorted_by_pt(j1.constituents()); //Vector containing j1 costituents
       double delta_R = j1.delta_R(j2);
       //if(doHardestSplitMatching_ && isMC_) jets_.jtJetConstituent.push_back(j2);
       double k_t = j2.perp()*delta_R;
@@ -647,22 +631,19 @@ void HiInclusiveJetSubstructure::IterativeDeclusteringGen(double groom_type, dou
       // double dyn = 1./output_jets[0].perp()*z*(1-z)*jj.perp()*pow(delta_R/rParam,mydynktcut);
       // std::cout << "Reco split " << nsplit << " with k_T=" << k_t << " z=" << z << " eta " << j2.eta() << " phi " << j2.phi() <<  std::endl;
       
-      if( ( (groom_combine == 0) && (groom_type == 1) && (z > mysdcut1) && (sdFlag == 0) ) || ( (groom_combine == 1) && (z > mysdcut1) && (sdFlag == 0) ) ){ //Qui e' la condizione che deve soddisfare per essere inclusa con l algo softdrop. Nota che qui si entra solo se la flag del SoftDrop =0. poi viene aggiornata a =1 all'interno di questa scope, cosi prendo solamente il primo angolo che soddisfa la condizione di SD.
+      //Looping over j1 constituents and if m>1 there is a D: Flagging D in hardest prong
+      for(size_t j=0;j<constitj1.size();j++) if(constitj1[j].m() > 1) flagtag=1;
+      
+      if( ( (groom_combine == 0) && (groom_type == 1) && (z > mysdcut1) && (sdFlag == 0) && (flagtag == 1)) || ( (groom_combine == 1) && (z > mysdcut1) && (sdFlag == 0) && (flagtag == 1) ) )
+      { //SD. Nota che qui si entra solo se la flag del SoftDrop =0. poi viene aggiornata a =1 all'interno di questa scope, cosi prendo solamente il primo angolo che soddisfa la condizione di SD.
         sdFlag=1;
-        //zg = z;
-        //rg  = delta_R;
-        //ktg=k_t;
         zg_SD = z;
         rg_SD = delta_R;
         ktg_SD = k_t;
-        // flagl=flagtag;
-        //flagprod=flagprompt; // io, per seguire il D
       }
 
-      if( ( (groom_combine == 0 ) && (groom_type == 0) && (k_t > 1) ) || ( (groom_combine == 1 ) && (k_t > 1) ) ){	//late kt    
-        //zg=z;
-        //rg=delta_R;
-        //ktg = k_t;
+      if( ( (groom_combine == 0 ) && (groom_type == 0) && (k_t > 1) && (flagtag == 1) ) || ( (groom_combine == 1 ) && (k_t > 1) && (flagtag == 1) ) )
+      {	//late kt    
         zg_latekt = z;
         rg_latekt = delta_R;
         ktg_latekt = k_t;
@@ -670,8 +651,6 @@ void HiInclusiveJetSubstructure::IterativeDeclusteringGen(double groom_type, dou
         j2first =j2;
         *sub1 = j1first;
         *sub2 = j2first;
-        //nsdin=nsplit;
-        //flagprod=flagprompt; // io, per seguire il D
       }
   jj = j1;
   nsplit = nsplit+1;

@@ -68,11 +68,11 @@ process.GlobalTag.toGet.extend([
 # root output
 process.TFileService = cms.Service("TFileService",
     
-    #I primi 2 sono per tests locali, cosi distinguo numero di eventi
-    fileName = cms.string("HiForestMiniAOD_OnlyCharged_DATA_Dfinder_numEvents"+str(numEvents)+".root"))
+    # per tests locali, cosi distinguo numero di eventi
+    #fileName = cms.string("HiForestMiniAOD_OnlyCharged_DATA_Dfinder_numEvents"+str(numEvents)+".root"))
     
-    #questi 2 sono per i task di crab
-    #fileName = cms.string("HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root"))
+    # per task di crab
+    fileName = cms.string("HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root"))
 
 # # edm output for debugging purposes
 # process.output = cms.OutputModule(

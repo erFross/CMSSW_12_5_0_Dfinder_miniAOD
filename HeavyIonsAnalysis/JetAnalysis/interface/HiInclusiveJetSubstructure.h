@@ -378,9 +378,6 @@ private:
     float reftau2[MAXJETS];
     float reftau3[MAXJETS];
     float refsym[MAXJETS];
-    // float refrg[MAXJETS];
-    // float refdyn_pt1[MAXJETS];
-    // float refangu[MAXJETS];
     
     float refdyn_var[MAXJETS];
     int refdyn_split[MAXJETS];
@@ -388,9 +385,6 @@ private:
     float refdyn_deltaR[MAXJETS];
     float refdyn_kt[MAXJETS];
     float refdyn_z[MAXJETS];
-	  //float ref_z[MAXJETS];
-    //float ref_rg[MAXJETS];
-    //float ref_ktg[MAXJETS];
 
     float ref_z_SD[MAXJETS];
     float ref_rg_SD[MAXJETS];

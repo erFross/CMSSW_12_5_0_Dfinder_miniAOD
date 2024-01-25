@@ -2,12 +2,12 @@ from CRABClient.UserUtilities import config
 config = config()
 config.section_('General')
 config.General.transferOutputs = True
-config.General.requestName = 'Run2_DATA_SD_OnlyCharged_ParticlePtCut1Gev_Aggregation' #Nome del task di crab
+config.General.requestName = 'Run2_DATA_OnlyCharged_Aggregation' #Nome del task di crab
 
 config.section_('JobType')
 config.JobType.psetName = 'forest_miniAOD_run2_DATA_wDfinder.py' #Configuration file che runno con cmsRun
 config.JobType.pluginName = 'Analysis'
-config.JobType.outputFiles = ['HiForestMiniAOD_OnlyCharged_DATA_latekt_ParticleJetCut1Gev.root'] #Output file nel file che runno .py
+config.JobType.outputFiles = ['HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root'] #Output file nel file che runno .py
 # config.JobType.maxMemoryMB = 2000
 config.JobType.maxMemoryMB = 5000
 
@@ -22,7 +22,7 @@ config.Data.publication = False
 config.Data.totalUnits = -1
 config.Data.unitsPerJob = 30000
 config.Data.splitting = 'EventAwareLumiBased'
-config.Data.outLFNDirBase = '/store/user/lfrosina/Run2_dfinder_DATA_SD_OnlyCharged_ParticlePtCut1Gev_aggregation'
+config.Data.outLFNDirBase = '/store/user/lfrosina/Run2_dfinder_DATA_OnlyCharged_aggregation'
 # config.Data.lumiMask = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/5TeV/ReReco/Cert_306546-306826_5TeV_EOY2017ReReco_Collisions17_JSON.txt'
 
 config.section_('Site')
