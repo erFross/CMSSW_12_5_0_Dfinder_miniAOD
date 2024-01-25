@@ -94,8 +94,9 @@ void CSJetProducer::runAlgorithm(edm::Event& iEvent, edm::EventSetup const& iSet
   for (fastjet::PseudoJet& ijet : tempJets) {
     //----------------------------------------------------------------------
     // sift ghosts and particles in the input jet
-    std::vector<fastjet::PseudoJet> particles, ghosts;
-    fastjet::SelectorIsPureGhost().sift(ijet.constituents(), ghosts, particles);
+    std::vector<fastjet::PseudoJet> particles, ghosts,pions,dmesons;
+    fastjet::SelectorMassMax(1).sift(ijet.constituents(),pions,dmesons);
+    fastjet::SelectorIsPureGhost().sift(pions, ghosts, particles);
     unsigned long nParticles = particles.size();
     if (nParticles == 0)
       continue;  //don't subtract ghost jets
@@ -149,7 +150,9 @@ void CSJetProducer::runAlgorithm(edm::Event& iEvent, edm::EventSetup const& iSet
     std::vector<fastjet::PseudoJet> subtracted_particles = subtractor.do_subtraction(particles, ghosts);
 
     //Create subtracted jets
+    subtracted_particles.insert(subtracted_particles.end(),dmesons.begin(),dmesons.end());
     fastjet::PseudoJet subtracted_jet = join(subtracted_particles);
+    
     if (subtracted_jet.perp() > jetPtMin_)
       fjJets_.push_back(subtracted_jet);
   }
