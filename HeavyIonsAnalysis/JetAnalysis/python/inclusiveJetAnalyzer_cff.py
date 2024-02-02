@@ -37,6 +37,6 @@ inclusiveJetAnalyzer = cms.EDAnalyzer("HiInclusiveJetSubstructure",
                                       doHiJetID = cms.untracked.bool(True),
                                       doStandardJetID = cms.untracked.bool(False),
                                       doSubEvent = cms.untracked.bool(False),
-                                      doChargedConstOnly = cms.untracked.bool(True),
+                                      doChargedConstOnly = cms.untracked.bool(False),
                                       doHardestSplitMatching = cms.untracked.bool(False),
                                       )

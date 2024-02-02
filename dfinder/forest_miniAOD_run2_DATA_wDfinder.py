@@ -25,7 +25,7 @@ process.source = cms.Source("PoolSource",
 )
 
 # number of events to process, set to -1 to process all events
-numEvents = 50
+numEvents = 5
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(numEvents)
     )
@@ -70,9 +70,11 @@ process.TFileService = cms.Service("TFileService",
     
     # per tests locali, cosi distinguo numero di eventi
     #fileName = cms.string("HiForestMiniAOD_OnlyCharged_DATA_Dfinder_numEvents"+str(numEvents)+".root"))
-    
+    #fileName = cms.string("HiForestMiniAOD_FullParticles_DATA_Dfinder_numEvents"+str(numEvents)+".root"))
+                                   
     # per task di crab
-    fileName = cms.string("HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root"))
+    #fileName = cms.string("HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root"))
+    fileName = cms.string("HiForestMiniAOD_FullParticles_DATA_Dfinder.root"))
 
 # # edm output for debugging purposes
 # process.output = cms.OutputModule(

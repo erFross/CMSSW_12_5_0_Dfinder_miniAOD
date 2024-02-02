@@ -208,6 +208,9 @@ private:
     //float jt_rg[MAXJETS];
     //float jt_ktg[MAXJETS];
 
+    int jt_flagtag_SD[MAXJETS];
+    int jt_flagtag_latekt[MAXJETS];
+
     float jt_z_SD[MAXJETS];
     float jt_rg_SD[MAXJETS];
     float jt_ktg_SD[MAXJETS];
@@ -392,6 +395,9 @@ private:
     float ref_z_latekt[MAXJETS];
     float ref_rg_latekt[MAXJETS];
     float ref_ktg_latekt[MAXJETS];
+
+    int ref_flagtag_SD[MAXJETS];
+    int ref_flagtag_latekt[MAXJETS];
 
     float refsub11[MAXJETS];
     float refsub12[MAXJETS];

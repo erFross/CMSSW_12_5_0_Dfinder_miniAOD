@@ -1,0 +1,196 @@
+
+
+[31m~*~ CENTRALITY TABLE FOR 2018 PBPB DATA ~*~[0m
+[36m~*~ TAG: CentralityTable_HFtowers200_DataPbPb_periHYDJETshape_run2v1033p1x01_offline ~*~[0m
+
+
+DEBUG 2024-01-30 17:39:09.686 UTC: 	 CRAB Client version: v3.240110
+DEBUG 2024-01-30 17:39:09.686 UTC: 	 Running on: Linux lxplus714.cern.ch 3.10.0-1160.102.1.el7.x86_64 #1 SMP Tue Oct 17 15:42:21 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2024-01-30 17:39:09.686 UTC: 	 Executing command: 'submit'
+DEBUG 2024-01-30 17:39:09.686 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfrosina/.crab3
+INFO 2024-01-30 17:39:09.710 UTC: 	 Will use CRAB configuration file submit_crab_data.py
+DEBUG 2024-01-30 17:39:09.710 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-01-30 17:39:09.769 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2024-01-30 17:39:09.848 UTC: 	 Checking credentials
+DEBUG 2024-01-30 17:39:09.849 UTC: 	 Found proxy file /tmp/x509up_u167428
+DEBUG 2024-01-30 17:39:09.849 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2024-01-30 17:39:09.849 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u167428
+DEBUG 2024-01-30 17:39:10.374 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2024-01-30 17:39:10.375 UTC: 	 Getting proxy life time left
+DEBUG 2024-01-30 17:39:10.375 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u167428
+DEBUG 2024-01-30 17:39:10.803 UTC: 	 output : 29986
+29985
+
+ error: 
+ retcode : 0
+DEBUG 2024-01-30 17:39:10.803 UTC: 	 Proxy valid for 08:19:45 hours
+DEBUG 2024-01-30 17:39:10.803 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2024-01-30 17:39:10.863 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+DEBUG 2024-01-30 17:39:10.863 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u167428
+DEBUG 2024-01-30 17:39:11.334 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfrosina/CN=873805/CN=Lorenzo Frosina
+
+ error: 
+ retcode : 0
+DEBUG 2024-01-30 17:39:11.334 UTC: 	 Getting myproxy life time left for 2283c1c99b6cf631e0ccc1abd189566f931bf34e
+DEBUG 2024-01-30 17:39:11.334 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l 2283c1c99b6cf631e0ccc1abd189566f931bf34e
+DEBUG 2024-01-30 17:39:11.865 UTC: 	 output : username: 2283c1c99b6cf631e0ccc1abd189566f931bf34e
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfrosina/CN=873805/CN=Lorenzo Frosina
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 552:33:26  (23.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2024-01-30 17:39:11.865 UTC: 	 Myproxy is valid: 1989180
+DEBUG 2024-01-30 17:39:11.865 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: 2283c1c99b6cf631e0ccc1abd189566f931bf34e  - validity: 23 days, 0:33:00
+DEBUG 2024-01-30 17:39:11.865 UTC: 	 Command use: submit
+DEBUG 2024-01-30 17:39:11.866 UTC: 	 Options use: ['submit_crab_data.py']
+DEBUG 2024-01-30 17:39:11.866 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2024-01-30 17:39:11.914 UTC: 	 CRABClient version: v3.240110
+DEBUG 2024-01-30 17:39:11.914 UTC: 	 Instance is prod
+DEBUG 2024-01-30 17:39:11.914 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2024-01-30 17:39:11.914 UTC: 	 Command api workflow
+DEBUG 2024-01-30 17:39:11.914 UTC: 	 Started submission
+DEBUG 2024-01-30 17:39:11.914 UTC: 	 Working on /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/dfinder/crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD
+DEBUG 2024-01-30 17:39:11.914 UTC: 	 Encoded data for curl request: subresource=backendurls
+DEBUG 2024-01-30 17:39:12.055 UTC: 	 Loading required information from the environment
+DEBUG 2024-01-30 17:39:12.055 UTC: 	 Found CMSSW_12_5_0 for slc7_amd64_gcc10 with base /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0
+DEBUG 2024-01-30 17:39:12.056 UTC: 	 Loading required information from the environment
+DEBUG 2024-01-30 17:39:12.056 UTC: 	 Found CMSSW_12_5_0 for slc7_amd64_gcc10 with base /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0
+DEBUG 2024-01-30 17:39:12.056 UTC: 	 UNIQUE NAME: tarUUID 3dac016a-8084-49f0-8d55-46ef7ad510bc 
+DEBUG 2024-01-30 17:39:12.056 UTC: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferOutputs = True
+config.General.requestName = 'Run2_DATA_OnlyCharged_Aggregation_LeadingD'
+config.section_('JobType')
+config.JobType.maxMemoryMB = 5000
+config.JobType.psetName = 'forest_miniAOD_run2_DATA_wDfinder.py'
+config.JobType.outputFiles = ['HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root']
+config.JobType.pluginName = 'Analysis'
+config.section_('Data')
+config.Data.splitting = 'EventAwareLumiBased'
+config.Data.publication = False
+config.Data.inputDataset = '/HIHardProbes/HIRun2018A-PbPb18_MiniAODv1-v1/MINIAOD'
+config.Data.totalUnits = -1
+config.Data.unitsPerJob = 30000
+config.Data.outLFNDirBase = '/store/user/lfrosina/Run2_dfinder_DATA_OnlyCharged_aggregation_LeadingD'
+config.section_('Site')
+config.Site.storageSite = 'T2_IT_Rome'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2024-01-30 17:39:12.056 UTC: 	 self.config.JobType.psetName: forest_miniAOD_run2_DATA_wDfinder.py
+INFO 2024-01-30 17:39:12.056 UTC: 	 Importing CMSSW configuration forest_miniAOD_run2_DATA_wDfinder.py
+INFO 2024-01-30 17:39:14.511 UTC: 	 Finished importing CMSSW configuration forest_miniAOD_run2_DATA_wDfinder.py
+DEBUG 2024-01-30 17:39:14.511 UTC: 	 Writing CMSSW configuration to /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/dfinder/crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD/inputs/PSet.py
+DEBUG 2024-01-30 17:39:14.682 UTC: 	 The following EDM output files will be collected: []
+DEBUG 2024-01-30 17:39:14.683 UTC: 	 The following TFile output files will be collected: ['HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root']
+DEBUG 2024-01-30 17:39:14.683 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
+DEBUG 2024-01-30 17:39:14.683 UTC: 	 Loading required information from the environment
+DEBUG 2024-01-30 17:39:14.683 UTC: 	 Found CMSSW_12_5_0 for slc7_amd64_gcc10 with base /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0
+DEBUG 2024-01-30 17:39:14.683 UTC: 	 Making tarball in /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/dfinder/crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD/inputs/3dac016a-8084-49f0-8d55-46ef7ad510bcdefault.tgz
+DEBUG 2024-01-30 17:39:14.685 UTC: 	 Checking directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/bin
+DEBUG 2024-01-30 17:39:14.685 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/bin to tarball
+DEBUG 2024-01-30 17:39:14.690 UTC: 	 Checking directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/python
+DEBUG 2024-01-30 17:39:14.690 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/python to tarball
+DEBUG 2024-01-30 17:39:16.175 UTC: 	 Checking directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/cfipython
+DEBUG 2024-01-30 17:39:16.175 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/cfipython to tarball
+DEBUG 2024-01-30 17:39:16.456 UTC: 	 Checking directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/lib
+DEBUG 2024-01-30 17:39:16.456 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/lib to tarball
+DEBUG 2024-01-30 17:39:18.681 UTC: 	 Checking directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/biglib
+DEBUG 2024-01-30 17:39:18.682 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/biglib to tarball
+DEBUG 2024-01-30 17:39:18.685 UTC: 	 Checking directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/module
+DEBUG 2024-01-30 17:39:18.685 UTC: 	 Checking directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/config/SCRAM/hooks
+DEBUG 2024-01-30 17:39:18.685 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/config/SCRAM/hooks to tarball
+DEBUG 2024-01-30 17:39:19.710 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/Configuration/data to tarball
+DEBUG 2024-01-30 17:39:19.866 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/Configuration/python to tarball
+DEBUG 2024-01-30 17:39:19.932 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/EGMAnalysis/data to tarball
+DEBUG 2024-01-30 17:39:20.182 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/EGMAnalysis/interface to tarball
+DEBUG 2024-01-30 17:39:20.224 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/EGMAnalysis/python to tarball
+DEBUG 2024-01-30 17:39:20.226 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/EventAnalysis/python to tarball
+DEBUG 2024-01-30 17:39:20.656 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/JetAnalysis/interface to tarball
+DEBUG 2024-01-30 17:39:20.675 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/JetAnalysis/python to tarball
+DEBUG 2024-01-30 17:39:20.695 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/MuonAnalysis/interface to tarball
+DEBUG 2024-01-30 17:39:20.701 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/MuonAnalysis/python to tarball
+DEBUG 2024-01-30 17:39:20.706 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/TrackAnalysis/interface to tarball
+DEBUG 2024-01-30 17:39:20.708 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/TrackAnalysis/python to tarball
+DEBUG 2024-01-30 17:39:20.709 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/HeavyIonsAnalysis/ZDCAnalysis/python to tarball
+DEBUG 2024-01-30 17:39:20.747 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoHI/HiJetAlgos/interface to tarball
+DEBUG 2024-01-30 17:39:20.760 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoHI/HiJetAlgos/python to tarball
+DEBUG 2024-01-30 17:39:20.791 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/JetProducers/data to tarball
+DEBUG 2024-01-30 17:39:20.809 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/JetProducers/interface to tarball
+DEBUG 2024-01-30 17:39:20.837 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/JetProducers/python to tarball
+DEBUG 2024-01-30 17:39:21.035 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/Configuration/python to tarball
+DEBUG 2024-01-30 17:39:21.179 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/FFTJetAlgorithms/interface to tarball
+DEBUG 2024-01-30 17:39:21.239 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/FFTJetProducers/interface to tarball
+DEBUG 2024-01-30 17:39:21.243 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/FFTJetProducers/python to tarball
+DEBUG 2024-01-30 17:39:21.391 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/JetAlgorithms/interface to tarball
+DEBUG 2024-01-30 17:39:21.425 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/JetAnalyzers/interface to tarball
+DEBUG 2024-01-30 17:39:21.691 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/JetAnalyzers/python to tarball
+DEBUG 2024-01-30 17:39:21.706 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/JetAssociationAlgorithms/interface to tarball
+DEBUG 2024-01-30 17:39:22.035 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/JetAssociationProducers/interface to tarball
+DEBUG 2024-01-30 17:39:22.050 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/JetAssociationProducers/python to tarball
+DEBUG 2024-01-30 17:39:22.102 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/RecoJets/JetPlusTracks/python to tarball
+DEBUG 2024-01-30 17:39:22.491 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/Bfinder/Bfinder/interface to tarball
+DEBUG 2024-01-30 17:39:22.855 UTC: 	 Adding directory /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/Bfinder/finderMaker/python to tarball
+DEBUG 2024-01-30 17:39:23.207 UTC: 	 Uploading archive /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/dfinder/crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD/inputs/3dac016a-8084-49f0-8d55-46ef7ad510bcdefault.tgz (4.247070.1 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
+DEBUG 2024-01-30 17:39:24.621 UTC: 	 Encoded data for curl request: subresource=upload&objecttype=sandbox&tarballname=e6981f7a18afd1d561841cdabd4df4e458c75155a29f3657cda56bb698c3a8a4.tar.gz
+DEBUG 2024-01-30 17:39:24.733 UTC: 	 Will execute:
+curl -f -v -X POST  -H "User-Agent: CRAB" -F "key=lfrosina/sandboxes/e6981f7a18afd1d561841cdabd4df4e458c75155a29f3657cda56bb698c3a8a4.tar.gz" -F "AWSAccessKeyId=ab00fcc889f248c495d2875f15a3badb" -F "policy=eyJleHBpcmF0aW9uIjogIjIwMjQtMDEtMzBUMTg6Mzk6MjRaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAiY3JhYmNhY2hlX3Byb2QifSwgeyJrZXkiOiAibGZyb3NpbmEvc2FuZGJveGVzL2U2OTgxZjdhMThhZmQxZDU2MTg0MWNkYWJkNGRmNGU0NThjNzUxNTVhMjlmMzY1N2NkYTU2YmI2OThjM2E4YTQudGFyLmd6In1dfQ==" -F "signature=aaxB2WkpSd/1fUSzmQtfXFLVWU8=" -F "file=@/afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/dfinder/crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD/inputs/3dac016a-8084-49f0-8d55-46ef7ad510bcdefault.tgz" "https://s3.cern.ch/crabcache_prod"
+DEBUG 2024-01-30 17:39:25.834 UTC: 	 exitcode: 0
+stdout: b''
+DEBUG 2024-01-30 17:39:25.834 UTC: 	 sandbox /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/dfinder/crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD/inputs/3dac016a-8084-49f0-8d55-46ef7ad510bcdefault.tgz successully uploaded to S3
+DEBUG 2024-01-30 17:39:25.834 UTC: 	 Loading required information from the environment
+DEBUG 2024-01-30 17:39:25.834 UTC: 	 Found CMSSW_12_5_0 for slc7_amd64_gcc10 with base /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0
+DEBUG 2024-01-30 17:39:25.834 UTC: 	 Making tarball in /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/dfinder/crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD/inputs/debugFiles.tgz
+DEBUG 2024-01-30 17:39:25.840 UTC: 	 Uploading archive /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/dfinder/crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD/inputs/debugFiles.tgz (4 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
+DEBUG 2024-01-30 17:39:25.843 UTC: 	 Encoded data for curl request: subresource=upload&objecttype=sandbox&tarballname=bc4d051e9c83d35a75b40a83ba6dac21b9e3004a2d08fbb7b0a0bc0c5a5f214b.tar.gz
+DEBUG 2024-01-30 17:39:25.923 UTC: 	 Will execute:
+curl -f -v -X POST  -H "User-Agent: CRAB" -F "key=lfrosina/sandboxes/bc4d051e9c83d35a75b40a83ba6dac21b9e3004a2d08fbb7b0a0bc0c5a5f214b.tar.gz" -F "AWSAccessKeyId=ab00fcc889f248c495d2875f15a3badb" -F "policy=eyJleHBpcmF0aW9uIjogIjIwMjQtMDEtMzBUMTg6Mzk6MjVaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAiY3JhYmNhY2hlX3Byb2QifSwgeyJrZXkiOiAibGZyb3NpbmEvc2FuZGJveGVzL2JjNGQwNTFlOWM4M2QzNWE3NWI0MGE4M2JhNmRhYzIxYjllMzAwNGEyZDA4ZmJiN2IwYTBiYzBjNWE1ZjIxNGIudGFyLmd6In1dfQ==" -F "signature=jfhC28MC3epKa9THQnne5obwl+k=" -F "file=@/afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/dfinder/crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD/inputs/debugFiles.tgz" "https://s3.cern.ch/crabcache_prod"
+DEBUG 2024-01-30 17:39:25.958 UTC: 	 exitcode: 0
+stdout: b''
+DEBUG 2024-01-30 17:39:25.959 UTC: 	 sandbox /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/dfinder/crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD/inputs/debugFiles.tgz successully uploaded to S3
+DEBUG 2024-01-30 17:39:25.959 UTC: 	 Result uploading input files: e6981f7a18afd1d561841cdabd4df4e458c75155a29f3657cda56bb698c3a8a4.tar.gz 
+DEBUG 2024-01-30 17:39:25.959 UTC: 	 submit() - self.configuration from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferOutputs = True
+config.General.requestName = 'Run2_DATA_OnlyCharged_Aggregation_LeadingD'
+config.section_('JobType')
+config.JobType.maxMemoryMB = 5000
+config.JobType.psetName = 'forest_miniAOD_run2_DATA_wDfinder.py'
+config.JobType.outputFiles = ['HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root']
+config.JobType.pluginName = 'Analysis'
+config.section_('Data')
+config.Data.splitting = 'EventAwareLumiBased'
+config.Data.publication = False
+config.Data.inputDataset = '/HIHardProbes/HIRun2018A-PbPb18_MiniAODv1-v1/MINIAOD'
+config.Data.totalUnits = -1
+config.Data.unitsPerJob = 30000
+config.Data.outLFNDirBase = '/store/user/lfrosina/Run2_dfinder_DATA_OnlyCharged_aggregation_LeadingD'
+config.section_('Site')
+config.Site.storageSite = 'T2_IT_Rome'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2024-01-30 17:39:25.959 UTC: 	 submit() - self.configreq {'dryrun': 0, 'workflow': 'crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD', 'saveoutput': 1, 'savelogsflag': 0, 'inputdata': '/HIHardProbes/HIRun2018A-PbPb18_MiniAODv1-v1/MINIAOD', 'primarydataset': '', 'nonvaliddata': 0, 'userfiles': [], 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'useparent': 0, 'ignorelocality': 0, 'splitalgo': 'EventAwareLumiBased', 'algoargs': 30000, 'totalunits': -1, 'lfn': '/store/user/lfrosina/Run2_dfinder_DATA_OnlyCharged_aggregation_LeadingD', 'publication': 0, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'publishname2': '', 'jobtype': 'Analysis', 'generator': 'pythia', 'addoutputfiles': ['HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root'], 'maxjobruntime': 1250, 'numcores': 1, 'maxmemory': 5000, 'priority': 10, 'nonprodsw': 0, 'asyncdest': 'T2_IT_Rome', 'requireaccelerator': 0, 'oneEventMode': 0, 'extrajdl': [], 'ignoreglobalblacklist': 0, 'partialdataset': 0, 'inputblocks': []}
+DEBUG 2024-01-30 17:39:25.959 UTC: 	 submit() - jobconfig {'addoutputfiles': [], 'tfileoutfiles': ['HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root'], 'edmoutfiles': [], 'jobarch': 'slc7_amd64_gcc10', 'jobsw': 'CMSSW_12_5_0', 'inputdata': '/HIHardProbes/HIRun2018A-PbPb18_MiniAODv1-v1/MINIAOD', 'cacheurl': 'https://cmsweb.cern.ch/S3/crabcache_prod', 'cachefilename': 'e6981f7a18afd1d561841cdabd4df4e458c75155a29f3657cda56bb698c3a8a4.tar.gz', 'debugfilename': 'bc4d051e9c83d35a75b40a83ba6dac21b9e3004a2d08fbb7b0a0bc0c5a5f214b.tar.gz', 'jobtype': 'Analysis'}
+INFO 2024-01-30 17:39:25.959 UTC: 	 Sending the request to the server at cmsweb.cern.ch
+DEBUG 2024-01-30 17:39:25.959 UTC: 	 Submitting {'dryrun': 0, 'workflow': 'crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD', 'saveoutput': 1, 'savelogsflag': 0, 'inputdata': '/HIHardProbes/HIRun2018A-PbPb18_MiniAODv1-v1/MINIAOD', 'primarydataset': '', 'nonvaliddata': 0, 'userfiles': [], 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'useparent': 0, 'ignorelocality': 0, 'splitalgo': 'EventAwareLumiBased', 'algoargs': 30000, 'totalunits': -1, 'lfn': '/store/user/lfrosina/Run2_dfinder_DATA_OnlyCharged_aggregation_LeadingD', 'publication': 0, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'publishname2': '', 'jobtype': 'Analysis', 'generator': 'pythia', 'addoutputfiles': [], 'maxjobruntime': 1250, 'numcores': 1, 'maxmemory': 5000, 'priority': 10, 'nonprodsw': 0, 'asyncdest': 'T2_IT_Rome', 'requireaccelerator': 0, 'oneEventMode': 0, 'extrajdl': [], 'ignoreglobalblacklist': 0, 'partialdataset': 0, 'inputblocks': [], 'tfileoutfiles': ['HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root'], 'edmoutfiles': [], 'jobarch': 'slc7_amd64_gcc10', 'jobsw': 'CMSSW_12_5_0', 'cacheurl': 'https://cmsweb.cern.ch/S3/crabcache_prod', 'cachefilename': 'e6981f7a18afd1d561841cdabd4df4e458c75155a29f3657cda56bb698c3a8a4.tar.gz', 'debugfilename': 'bc4d051e9c83d35a75b40a83ba6dac21b9e3004a2d08fbb7b0a0bc0c5a5f214b.tar.gz'} 
+DEBUG 2024-01-30 17:39:25.959 UTC: 	 Encoded data for curl request: dryrun=0&workflow=crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD&saveoutput=1&savelogsflag=0&inputdata=%2FHIHardProbes%2FHIRun2018A-PbPb18_MiniAODv1-v1%2FMINIAOD&primarydataset=&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&useparent=0&ignorelocality=0&splitalgo=EventAwareLumiBased&algoargs=30000&totalunits=-1&lfn=%2Fstore%2Fuser%2Flfrosina%2FRun2_dfinder_DATA_OnlyCharged_aggregation_LeadingD&publication=0&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&publishname2=&jobtype=Analysis&generator=pythia&maxjobruntime=1250&numcores=1&maxmemory=5000&priority=10&nonprodsw=0&asyncdest=T2_IT_Rome&requireaccelerator=0&oneEventMode=0&ignoreglobalblacklist=0&partialdataset=0&jobarch=slc7_amd64_gcc10&jobsw=CMSSW_12_5_0&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2FS3%2Fcrabcache_prod&cachefilename=e6981f7a18afd1d561841cdabd4df4e458c75155a29f3657cda56bb698c3a8a4.tar.gz&debugfilename=bc4d051e9c83d35a75b40a83ba6dac21b9e3004a2d08fbb7b0a0bc0c5a5f214b.tar.gz&tfileoutfiles=HiForestMiniAOD_OnlyCharged_DATA_Dfinder.root
+DEBUG 2024-01-30 17:39:26.028 UTC: 	 Result: {'result': [{'RequestName': '240130_173925:lfrosina_crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD'}]}
+INFO 2024-01-30 17:39:26.046 UTC: 	 Success: Your task has been delivered to the prod CRAB3 server.
+INFO 2024-01-30 17:39:26.047 UTC: 	 Task name: 240130_173925:lfrosina_crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD
+INFO 2024-01-30 17:39:26.047 UTC: 	 Project dir: ./crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD
+INFO 2024-01-30 17:39:26.047 UTC: 	 Please use ' crab status -d ./crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD ' to check how the submission process proceeds.
+DEBUG 2024-01-30 17:39:26.047 UTC: 	 About to return
+INFO 2024-01-30 17:39:26.051 UTC: 	 Log file is /afs/cern.ch/user/l/lfrosina/public/DFinder/CMSSW_12_5_0/src/dfinder/crab_Run2_DATA_OnlyCharged_Aggregation_LeadingD/crab.log
